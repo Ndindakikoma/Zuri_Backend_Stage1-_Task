@@ -8,20 +8,15 @@
     - Bio(description about yourself) should be a **string** d'''
 
 
-from flask import *
+from flask import Flask
 import json
-import time
 
 app = Flask(__name__)
 
 
-@app.route('/', methods=['GET'])
+@app.route('/user/', methods=['GET'])
 def home_page():
-    data_set = {"slackUsername": 'hngi9',
-                "backend": True, "age": 24, "bio": 'I am a junior software engineer'}
+    data_set = {"slackUsername": 'Ndinda Kikoma',
+                "backend": True, "age": 24, "bio": 'I am a junior software engineer currently enrolled in Zuri intership'}
     json_dump = json.dumps(data_set)
     return json_dump
-
-
-if __name__ == '__main__':
-    app.run(port=4040)
